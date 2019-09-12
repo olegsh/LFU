@@ -1,12 +1,14 @@
 package org.olegsh.cache.lfu.api.storage;
 
+import org.springframework.beans.factory.annotation.Value;
+
 import java.util.LinkedHashSet;
 import java.util.Set;
 
 public class Bucket {
   private static Bucket bucketInstance = new Bucket();
   private Set<Integer> linkedSet;
-  private int MAX_SIZE = 5;
+  private final int MAX_SIZE = 5;
 
   public static Bucket getInstance() {
     // bucket should never be equal to null, but just in case...
